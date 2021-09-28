@@ -27,17 +27,11 @@ AddEventHandler("3dme:me", function(text, source, icon)
                     "%;top: " .. yyy * 100 .. '%;"><div class="me-container"><div class="icon-container"><span style="color:#cb73e6;"><i class="fas fa-'..icon..' fa-lg  "></i></span></div><div class="text-container"><b>ME: </b>' .. text .. "</div></div></span>"
             end
             if lasthtmlString ~= htmlString then
-                local myId = PlayerId()
-                local pid = GetPlayerFromServerId(id)
-                if pid ~= -1 then
-                    if pid == myId then
                         SendNUIMessage({
                             toggle = true,
                             html = htmlString
                         })
                         lasthtmlString = htmlString
-                    end     
-                end
             end
         end
         if isDisplaying == false then
@@ -80,17 +74,12 @@ AddEventHandler("3dme:do", function(text, source, icon)
                     "%;top: " .. yyy * 100 .. '%;"><div class="do-container"><div class="icon-container"><span style="color: #4d66f1;"><i class="fas fa-'..icon..' fa-lg  "></i></span></div><div class="text-container"><b>DO: </b>' .. text .. "</div></div></span>"
             end
             if lasthtmlString ~= htmlString then
-                local myId = PlayerId()
-                local pid = GetPlayerFromServerId(id)
-                if pid ~= -1 then
-                    if pid == myId then
+
                         SendNUIMessage({
                             toggle = true,
                             html = htmlString
                         })
                         lasthtmlString = htmlString
-                    end     
-                end
             end
         end
         if isDisplaying == false then
@@ -132,17 +121,11 @@ RegisterNetEvent("3dme:med")
                         "%;top: " .. yyy * 100 .. '%;"><div class="med-container"><div class="icon-container"><span style="color:#c03737;"><i class="fas fa-'..icon..' fa-lg  "></i></span></div><div class="text-container"><b>MED: </b>' .. text .. "</div></div></span>"
                 end
                 if lasthtmlString ~= htmlString then
-                    local myId = PlayerId()
-                    local pid = GetPlayerFromServerId(id)
-                    if pid ~= -1 then
-                        if pid == myId then
                             SendNUIMessage({
                                 toggle = true,
                                 html = htmlString
                             })
                             lasthtmlString = htmlString
-                        end     
-                    end
                 end
             end
             if isDisplaying == false then
